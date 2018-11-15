@@ -1,0 +1,49 @@
+package com.infogain.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.infogain.model.Employee;
+import com.infogain.service.EmployeeService;
+
+@Controller
+public class EmployeeController {
+
+	@Autowired
+	private EmployeeService esr;
+	
+	@RequestMapping(value="/index", method=RequestMethod.GET)
+	public ModelAndView welcome()
+	{
+		return new ModelAndView("index");
+	}
+	
+	@RequestMapping(value="/add",method=RequestMethod.GET)
+	public ModelAndView addEmployee()
+	{
+		return new ModelAndView("addEmployee","command", new Employee());
+	}//end addEmployee
+	
+	@RequestMapping(value="/save", method=RequestMethod.POST)
+	public ModelAndView saveEmployee(Employee emp)
+	{
+		esr.addEmployee(emp);
+		return new ModelAndView("redirect:/employees.html");
+	}
+	
+	@RequestMapping(value="/employees", method=RequestMethod.GET)
+	public ModelAndView listEmployees()
+	{
+		Map<String, Object> model=new HashMap<>();
+		model.put("employees", esr.listEmployees());
+		return new ModelAndView("employeesList",model);
+	}
+}

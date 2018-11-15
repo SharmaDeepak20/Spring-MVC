@@ -1,0 +1,11 @@
+package com.spring.aop;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.core.annotation.Order;
+
+@Aspect
+@Order(value=0)
+public class EmpAspect1 {
+
+	
+}

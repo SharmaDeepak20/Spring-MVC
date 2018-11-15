@@ -1,0 +1,24 @@
+package com.infogain.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.infogain.model.Employee;
+
+@Repository("employeeDao")
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Override
+	public void addEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Employee> listEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

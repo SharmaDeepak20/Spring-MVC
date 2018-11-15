@@ -1,0 +1,12 @@
+package com.example.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MySpringController {
+
+	public String greet()
+	{
+		return "Welcome Spring Boot";
+	}//end greet
+}

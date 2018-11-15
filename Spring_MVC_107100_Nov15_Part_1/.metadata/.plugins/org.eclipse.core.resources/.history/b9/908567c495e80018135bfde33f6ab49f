@@ -1,0 +1,5 @@
+package com.infogain.bean;
+
+public class Contact {
+
+}

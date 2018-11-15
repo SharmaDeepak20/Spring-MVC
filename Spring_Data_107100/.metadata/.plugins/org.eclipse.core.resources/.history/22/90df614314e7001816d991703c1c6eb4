@@ -1,0 +1,8 @@
+package com.web.spring.repository;
+
+public class Snippet {
+	public static void main(String[] args) {
+		BookCurdRepository
+	}
+}
+

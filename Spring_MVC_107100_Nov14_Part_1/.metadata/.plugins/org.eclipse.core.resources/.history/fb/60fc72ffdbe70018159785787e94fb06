@@ -1,0 +1,26 @@
+package com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.bean.Employee;
+
+@Controller
+public class MvcController {
+
+	@RequestMapping(value="/employee",method=RequestMethod.GET)
+	public ModelAndView employee()
+	{
+		return new ModelAndView("emp","command",new Employee());
+	}
+	
+	public ModelAndView addEmployee(Employee emp, ModelAndView model)
+	{
+		model.addObject("eID",emp.geteId());
+		model.addObject("name",emp.getName());
+		model.addObject("dept",emp.getDept());
+		return model;
+	}
+}

@@ -1,0 +1,4 @@
+127.0.0.1 - - [15/Nov/2018:12:40:46 +0530] "GET /SpringMVCHibernateApp/ HTTP/1.1" 200 325
+127.0.0.1 - - [15/Nov/2018:12:40:50 +0530] "GET /SpringMVCHibernateApp/add.html HTTP/1.1" 200 1261
+127.0.0.1 - - [15/Nov/2018:12:41:04 +0530] "POST /SpringMVCHibernateApp/save.html HTTP/1.1" 302 -
+127.0.0.1 - - [15/Nov/2018:12:41:05 +0530] "GET /SpringMVCHibernateApp/employees.html HTTP/1.1" 200 549

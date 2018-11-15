@@ -1,0 +1,5 @@
+package om.infogain.bean;
+
+public class Product {
+
+}

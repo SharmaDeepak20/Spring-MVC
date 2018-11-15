@@ -1,0 +1,20 @@
+package com.spring.aop;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class EmployeeAspect {
+    
+	@Before("execution(*com.spring.aop.EmployeeServiceImpl.getEmployeebyName(..))")
+ 	public void myBeforeAdvice(JoinPoint jp)
+	{
+		System.out.println("Before the execution of joinPoint method");
+		System.out.println("Name of joinpoint "+jp.getSignature().getName());
+		System.out.println("Arguments "+Arrays.toString(jp.getArgs()));
+		System.out.println("Target Class "+jp.getTarget().getClass().getName());
+	}
+}
